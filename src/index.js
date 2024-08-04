@@ -3,7 +3,7 @@ const app = express(); // Crea una instancia de la aplicación Express
 const morgan = require('morgan'); // Importa el módulo Morgan para el registro de solicitudes HTTP
 const cors = require('cors');
 
-app.use(cors({ origin: 'http://127.0.0.1:5500' }))
+app.use(cors({ origin: 'http://localhost:5173' }))
 
 // Settings
 app.set('port', process.env.PORT || 3006); // Establece el puerto en el que el servidor escuchará: usa el puerto definido en el entorno o 3005 por defecto
@@ -20,6 +20,7 @@ app.use('/pacientes', require('./routes/pacientes')); // Usa las rutas definidas
 app.use('/crear', require('./routes/pacientes'));
 app.use('/modificar/:id', require('./routes/pacientes'));
 app.use('eliminar/:id/', require('./routes/pacientes'));
+app.use('paciente/:id/', require('./routes/pacientes'));
 
 // Empezando el servidor
 app.listen(app.get('port'), () => { // Inicia el servidor en el puerto configurado
