@@ -33,7 +33,7 @@ router.get("/paciente/:id", async (req, res) => {
   }
 });
 
-router.post("/crear", async (req, res) => {
+router.post("/crearpaciente", async (req, res) => {
   // Define una ruta POST en '/crear' para crear un nuevo paciente
   try {
     const crear = await Paciente.create(req.body); // Intenta crear un nuevo paciente con los datos enviados en el cuerpo de la solicitud (req.body)

@@ -2,24 +2,28 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../../../BD/postgres.js');
 
 const Paciente = sequelize.define('Paciente', { // sequelize.define() es un metodo de sequelize que se utiliza para definir un modelo en la base de datos.
-    Identificación: { // Define un campo llamado 'Identificación' en la tabla 'Pacientes'
+    identificacion: { // Define un campo llamado 'Identificación' en la tabla 'Pacientes'
         type: DataTypes.STRING, // El tipo de dato de este campo es STRING (VARCHAR en SQL)
         allowNull: false // Este campo es obligatorio y no puede ser nulo (NOT NULL en SQL)
     },
-    Nombres: {
+    nombres: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    Apellidos: {
+    apellido: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    EPS: {
+    eps: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    Edad: {
+    edad: {
         type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    mora: {
+        type: DataTypes.BOOLEAN,
         allowNull: false
     }
 }, {
