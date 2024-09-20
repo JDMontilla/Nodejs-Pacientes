@@ -6,7 +6,7 @@ const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:5173' }))
 
 // Settings
-app.set('port', process.env.PORT || 3006); // Establece el puerto en el que el servidor escuchará: usa el puerto definido en el entorno o 3005 por defecto
+app.set('port', process.env.PORT || 3006); // Establece el puerto en el que el servidor escuchará: usa el puerto definido en el entorno o 3006 por defecto
 app.set('json spaces', 2); // Configura el espaciado en 2 para las respuestas JSON formateadas
 
 // Middlewares
@@ -21,6 +21,9 @@ app.use('/crear', require('./routes/pacientes'));
 app.use('/modificar/:id', require('./routes/pacientes'));
 app.use('eliminar/:id/', require('./routes/pacientes'));
 app.use('paciente/:id/', require('./routes/pacientes'));
+
+app.use('/medico', require('./routes/medico'));
+app.use(require('./routes/medico'))
 
 // Empezando el servidor
 app.listen(app.get('port'), () => { // Inicia el servidor en el puerto configurado
