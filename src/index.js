@@ -22,8 +22,13 @@ app.use('/modificar/:id', require('./routes/pacientes'));
 app.use('eliminar/:id/', require('./routes/pacientes'));
 app.use('paciente/:id/', require('./routes/pacientes'));
 
-app.use('/medico', require('./routes/medico'));
 app.use(require('./routes/medico'))
+app.use('/medico/:id', require('./routes/medico'));
+app.use(require('./routes/medico'))
+app.use('/crearMedico', require('./routes/medico'));
+app.use('/modificarMedico/:id', require('./routes/medico'))
+app.use('/eliminarMedico/:id', require('./routes/medico'))
+
 
 // Empezando el servidor
 app.listen(app.get('port'), () => { // Inicia el servidor en el puerto configurado
